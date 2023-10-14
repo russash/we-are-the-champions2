@@ -23,9 +23,11 @@ const endorsementListEl = document.getElementById("endorsement-list");
 publishButtonEl.addEventListener("click", function () {
   let inputValue = InputFieldEl.value;
 
-  push(endorsementListInDB, inputValue);
-
-  clearInputFieldEl();
+  // Prevent people publishing empty endorsements
+  if (inputValue) {
+    push(endorsementListInDB, inputValue);
+    clearInputFieldEl();
+  }
 });
 
 onValue(endorsementListInDB, function (snapshot) {
@@ -36,10 +38,6 @@ onValue(endorsementListInDB, function (snapshot) {
 
     for (let i = 0; i < itemsArray.length; i++) {
       let currentItem = itemsArray[i];
-      // let currentItemID = currentItem[0];
-      // let currentItemValue = currentItem[1];
-
-      // appendItemToEndorsementList(itemsArray[i]);
       appendItemToEndorsementList(currentItem);
     }
   } else {
