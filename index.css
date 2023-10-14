@@ -32,17 +32,33 @@ h1 {
 textarea {
   box-sizing: border-box;
   padding: 12px 15px;
-  margin-bottom: 13px;
+  margin-bottom: 9px;
   width: 317px;
   height: 118px;
   font-family: inherit;
   font-size: 15px;
   font-weight: 400;
   border-radius: 8px;
-  background: #444059;
   border: none;
   resize: none;
+  background: #444059;
   color: #fff;
+}
+
+input {
+  box-sizing: border-box;
+  padding: 6px;
+  margin-bottom: 9px;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 15px;
+  width: 152.852px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background: #444059;
+  color: #fff;
+  text-align: center;
 }
 
 /* textarea:focus,
@@ -82,11 +98,21 @@ ul li {
   font-weight: 400;
   font-size: 12px;
   background: #fff;
-  color: #8f8f8f;
+  /* color: #8f8f8f; */
+  color: #1b1924;
 }
 
 button:hover,
 ul li:hover {
   cursor: pointer;
   background: #e6e6e6;
+}
+
+.bold {
+  /* padding: 13px 0; */
+  font-weight: 700;
+}
+
+p {
+  margin: 13px 0 9px 0;
 }
