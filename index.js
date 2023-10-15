@@ -21,6 +21,7 @@ const fromFieldEl = document.getElementById("from-field");
 const toFieldEl = document.getElementById("to-field");
 const publishButtonEl = document.getElementById("publish-button");
 const endorsementListEl = document.getElementById("endorsement-list");
+const likeBoxEl = document.getElementById("like-box");
 
 publishButtonEl.addEventListener("click", function () {
   let objectValue = {
@@ -60,8 +61,16 @@ function appendItemToEndorsementList(item) {
   let toValue = item[1].toValue;
 
   let newEl = document.createElement("li");
+  let likeStringTest = document.createElement("div");
 
-  newEl.innerHTML = `<div class="bold">To ${toValue}</div><p>${inputValue}</p><div class="bold">From ${fromValue}</div>`;
+  let fromString = `<div class="bold">To ${toValue}</div>`;
+  let inputString = `<p>${inputValue}</p>`;
+  let ToString = `<div class="bold">From ${fromValue}</div>`;
+
+  // Not sure yet how to addEventListener to this part, plan to use localStorage for likes tracking.
+  let likeString = `<div class="like-box">❤ 4</div>`;
+
+  newEl.innerHTML = fromString + inputString + ToString + likeString;
 
   newEl.addEventListener("click", function () {
     let exactLocationOfItemInDB = ref(database, `endorsementList/${inputID}`);

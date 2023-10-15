@@ -100,6 +100,7 @@ ul li {
   background: #fff;
   /* color: #8f8f8f; */
   color: #1b1924;
+  position: relative;
 }
 
 button:hover,
@@ -109,10 +110,25 @@ ul li:hover {
 }
 
 .bold {
-  /* padding: 13px 0; */
   font-weight: 700;
 }
 
 p {
   margin: 13px 0 9px 0;
+}
+
+.like-box {
+  color: #000;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  cursor: pointer;
+}
+
+.like-box:hover {
+  font-size: 20px;
 }
