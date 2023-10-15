@@ -44,7 +44,8 @@ onValue(endorsementListInDB, function (snapshot) {
 
     clearEndorsementListEl();
 
-    for (let i = 0; i < itemsArray.length; i++) {
+    for (let i = itemsArray.length - 1; i > 0; i--) {
+      console.log(itemsArray[i]);
       let currentItem = itemsArray[i];
       appendItemToEndorsementList(currentItem);
     }
