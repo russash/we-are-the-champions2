@@ -34,14 +34,13 @@ publishButtonEl.addEventListener("click", function () {
   // Prevent people publishing empty endorsements
   if (objectValue) {
     push(endorsementListInDB, objectValue);
-    clearInputFieldEl();
   }
+  clearText();
 });
 
 onValue(endorsementListInDB, function (snapshot) {
   if (snapshot.exists()) {
     let itemsArray = Object.entries(snapshot.val());
-    console.log(itemsArray);
 
     clearEndorsementListEl();
 
@@ -80,8 +79,10 @@ function appendItemToEndorsementList(item) {
   endorsementListEl.append(newEl);
 }
 
-function clearInputFieldEl() {
+function clearText() {
   InputFieldEl.value = "";
+  fromFieldEl.value = "";
+  toFieldEl.value = "";
 }
 
 function clearEndorsementListEl() {
